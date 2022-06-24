@@ -1,4 +1,4 @@
-package it.zoo.vendro.tentacle
+package it.zoo.vendro.octopus.tentacle
 
 import kotlinx.coroutines.sync.Mutex
 

@@ -1,7 +1,7 @@
-package it.zoo.vendro
+package it.zoo.vendro.octopus
 
-import it.zoo.vendro.tentacle.Sucker
-import it.zoo.vendro.tentacle.Tentacle
+import it.zoo.vendro.octopus.tentacle.Sucker
+import it.zoo.vendro.octopus.tentacle.Tentacle
 
 /**
  * Adds a new [Sucker] to the [Tentacle] registered with the given name.

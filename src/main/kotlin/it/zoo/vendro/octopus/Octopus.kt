@@ -1,10 +1,10 @@
-package it.zoo.vendro
+package it.zoo.vendro.octopus
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.newSingleThreadContext
-import it.zoo.vendro.tentacle.Tentacle
+import it.zoo.vendro.octopus.tentacle.Tentacle
 
 object Octopus {
     private val tentacles = mutableMapOf<String, Tentacle>()
