@@ -1,4 +1,4 @@
-package tentacle
+package it.zoo.vendro.tentacle
 
 /**
  * A lambda function that takes no arguments and returns nothing.

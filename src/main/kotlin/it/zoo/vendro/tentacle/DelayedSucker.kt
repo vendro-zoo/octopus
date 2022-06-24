@@ -1,4 +1,4 @@
-package tentacle
+package it.zoo.vendro.tentacle
 
 import kotlinx.coroutines.sync.Mutex
 

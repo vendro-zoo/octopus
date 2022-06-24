@@ -1,7 +1,7 @@
-package tentacle
+package it.zoo.vendro.tentacle
 
 import kotlinx.coroutines.sync.Mutex
-import tryUnlock
+import it.zoo.vendro.tryUnlock
 import java.util.concurrent.ConcurrentLinkedQueue
 
 /**

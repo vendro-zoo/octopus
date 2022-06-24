@@ -1,5 +1,7 @@
-import tentacle.Sucker
-import tentacle.Tentacle
+package it.zoo.vendro
+
+import it.zoo.vendro.tentacle.Sucker
+import it.zoo.vendro.tentacle.Tentacle
 
 /**
  * Adds a new [Sucker] to the [Tentacle] registered with the given name.
@@ -10,6 +12,6 @@ import tentacle.Tentacle
  */
 suspend fun delayedAction(tentacleName: String, sucker: Sucker) {
     val tentacle = Octopus.getTentacle(tentacleName)
-        ?: throw IllegalArgumentException("tentacle.Tentacle \"$tentacleName\" not found")
+        ?: throw IllegalArgumentException("it.zoo.vendro.Tentacle \"$tentacleName\" not found")
     tentacle.queueCall(sucker)
 }
