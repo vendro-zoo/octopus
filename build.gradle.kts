@@ -5,7 +5,7 @@ val vers: String by project
 plugins {
     kotlin("jvm") version "1.7.0"
     id("maven-publish")  // Used to publish to the local maven repository
-    id("org.jetbrains.dokka") version "1.6.21"  // Used to generate the API documentation
+    id("org.jetbrains.dokka") version "1.7.10"  // Used to generate the API documentation
 }
 
 group = "it.zoo.vendro"
