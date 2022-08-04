@@ -45,6 +45,10 @@ tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+tasks.withType<GenerateModuleMetadata> {
+    enabled = false
+}
+
 // Publish all the jar files to the local maven repository
 publishing {
     publications {
