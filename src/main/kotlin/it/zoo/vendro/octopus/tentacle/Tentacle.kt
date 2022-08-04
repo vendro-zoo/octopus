@@ -49,6 +49,9 @@ class Tentacle {
         executionMutex.tryUnlock()  // Starts the queue if it's not started yet.
         mutex.lock()  // Waits for the delayed call to be executed.
 
+        val e = ds.exception
+        if (e != null) throw e
+
         return ds.result
     }
 }

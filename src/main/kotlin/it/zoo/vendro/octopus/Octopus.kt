@@ -1,13 +1,11 @@
 package it.zoo.vendro.octopus
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.newSingleThreadContext
 import it.zoo.vendro.octopus.tentacle.Tentacle
+import kotlinx.coroutines.*
 
 object Octopus {
     private val tentacles = mutableMapOf<String, Tentacle>()
+    private var runningTentacles = listOf<Job>()
 
     fun addTentacle(name: String) = apply {
         if (!tentacles.containsKey(name)) {
@@ -19,10 +17,16 @@ object Octopus {
 
     @OptIn(DelicateCoroutinesApi::class)
     suspend fun awake(scope: CoroutineScope) {
-        tentacles.forEach {
+        runningTentacles = tentacles.map {
             scope.launch(newSingleThreadContext("it.zoo.vendro.Tentacle#${it.key}")) {
                 it.value.run()
             }
+        }
+    }
+
+    suspend fun kill() {
+        runningTentacles.forEach {
+            it.cancelAndJoin()
         }
     }
 }
